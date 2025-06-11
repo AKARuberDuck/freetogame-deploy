@@ -51,3 +51,4 @@ document.addEventListener("DOMContentLoaded", () => {
     "Home is now behind you. The world is ahead."
   ];
   quote.textContent
+new Audio(`assets/music/${theme}.mp3`);
