@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("games-container");
 
   // Fetch games from your working proxy
-  fetch("https://freetogame-proxy.onrender.com/api/games")
+  fetch("https://freetogame-proxy.onrender.com/api/games?platform=browser")
     .then((res) => {
       if (!res.ok) throw new Error("Network response was not ok");
       return res.json();
