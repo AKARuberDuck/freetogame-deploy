@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="mobile-web-app-capable" content="yes" />
   <title>FreeToGame Launcher</title>
-  <link rel="icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="splashScreen"><span id="quote"></span></div>
-
   <header>
     <h1>🕹️ FreeToGame</h1>
-    <button id="toggleTheme">☀️ Light Mode</button>
   </header>
 
   <main>
-    <p>Welcome to your launcher. Here are some free games:</p>
-    <section id="gameList" class="grid"></section>
+    <p>Here are some free games you can try:</p>
+    <div id="games-container">Loading games...</div>
   </main>
 
   <script src="scripts.js"></script>
