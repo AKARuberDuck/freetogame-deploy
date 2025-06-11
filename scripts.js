@@ -1,44 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleTheme = document.getElementById("toggleTheme");
-  const quote = document.getElementById("quote");
+  const container = document.getElementById("games-container");
 
-  toggleTheme.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    toggleTheme.textContent = document.body.classList.contains("dark")
-      ? "🌙 Dark Mode"
-      : "☀️ Light Mode";
-  });
-
-  const quotes = [
-    "There is no try. Only do.",
-    "Happiness can be found even in the darkest of times.",
-    "Life finds a way.",
-    "Even the smallest person can change the course of the future.",
-    "Home is now behind you. The world is ahead."
-  ];
-  quote.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
-
-  setTimeout(() => {
-    const splash = document.getElementById("splashScreen");
-    if (splash) splash.style.display = "none";
-  }, 4500);
-
-  // ✅ Secure proxy endpoint:
   fetch("https://freetogame-proxy.onrender.com/api/games")
-    .then(res => res.json())
-    .then(games => {
-      const list = document.getElementById("gameList");
-      list.innerHTML = games.slice(0, 12).map(game => `
-        <div class="game-card">
-          <img src="${game.thumbnail}" alt="${game.title}" />
+    .then((res) => res.json())
+    .then((games) => {
+      container.innerHTML = ""; // Clear any placeholder content
+
+      games.forEach((game) => {
+        const card = document.createElement("div");
+        card.className = "game-card";
+
+        card.innerHTML = `
+          <img src="${game.thumbnail}" alt="${game.title}" class="game-img">
           <h3>${game.title}</h3>
           <p>${game.short_description}</p>
-          <a href="${game.game_url}" target="_blank">▶ Play</a>
-        </div>
-      `).join("");
+          <a href="${game.game_url}" target="_blank">Play Now</a>
+        `;
+
+        container.appendChild(card);
+      });
     })
-    .catch(err => {
-      document.getElementById("gameList").textContent = "⚠️ Failed to load games.";
+    .catch((err) => {
       console.error("Error fetching games:", err);
+      container.innerHTML = "<p>Failed to load games. Try again later.</p>";
     });
 });
