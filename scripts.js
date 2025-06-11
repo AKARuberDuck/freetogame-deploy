@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleTheme = document.getElementById("toggleTheme");
   const quote = document.getElementById("quote");
 
-  // Toggle light/dark mode
+  // Light/Dark toggle
   toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     toggleTheme.textContent = document.body.classList.contains("dark")
@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   quote.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
 
-  // Auto-hide splash
+  // Hide splash
   setTimeout(() => {
     const splash = document.getElementById("splashScreen");
     if (splash) splash.style.display = "none";
   }, 4500);
 
-  // Load games from API
+  // Fetch games
   fetch("https://www.freetogame.com/api/games")
     .then(res => res.json())
     .then(games => {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `).join("");
     })
     .catch(err => {
-      document.getElementById("gameList").textContent = "Failed to load games.";
+      document.getElementById("gameList").textContent = "⚠️ Failed to load games.";
       console.error("Error fetching games:", err);
     });
 });
