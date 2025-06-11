@@ -27,6 +27,53 @@ button#toggleTheme {
   color: inherit;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+body.dark .game-card {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.game-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.game-card p {
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+.game-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #00bcd4;
+}
+
 #splashScreen {
   position: fixed;
   width: 100%;
