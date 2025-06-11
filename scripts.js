@@ -26,3 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   quote.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
 });
+setTimeout(() => {
+  document.getElementById("splashScreen").style.display = "none";
+}, 4500);
