@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 4500);
 
   // ✅ Secure proxy endpoint:
-  fetch("https://AKARuberDuck.onrender.com/api/games")
+  fetch("https://freetogame-proxy.onrender.com/api/games")
     .then(res => res.json())
     .then(games => {
       const list = document.getElementById("gameList");
