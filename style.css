@@ -80,7 +80,7 @@ body.dark .game-card {
   height: 100%;
   background: #000;
   color: #fff;
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
