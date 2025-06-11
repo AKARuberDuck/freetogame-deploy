@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       : "☀️ Light Mode";
   });
 
-  // Inspirational quotes for splash screen
+  // Splash quote
   const quotes = [
     "There is no try. Only do.",
     "Happiness can be found even in the darkest of times.",
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   quote.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
 
-  // Splash screen auto-dismiss
+  // Hide splash screen
   setTimeout(() => {
     const splash = document.getElementById("splashScreen");
     if (splash) splash.style.display = "none";
