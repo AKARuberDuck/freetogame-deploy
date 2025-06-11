@@ -12,12 +12,18 @@ body.dark {
   color: #f0f0f0;
 }
 
-#toggleTheme {
-  cursor: pointer;
-  padding: 10px 16px;
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+button#toggleTheme {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   border: none;
   background: none;
-  font-size: 1rem;
+  cursor: pointer;
   color: inherit;
 }
 
@@ -30,6 +36,6 @@ body.dark {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  z-index: 10;
+  font-size: 1.3rem;
+  z-index: 999;
 }
