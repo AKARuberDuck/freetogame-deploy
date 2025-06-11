@@ -2,32 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="assets/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FreeToGame Launcher</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="scripts.js"></script>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="splashScreen">
-  <h2>Initializing FreeToGame Systems...</h2>
-</div>
+  <div id="splashScreen"><span id="quote"></span></div>
+
   <header>
-    <h1>🎮 FreeToGame Launcher</h1>
-    <a href="assets/freetogame-deploy.zip" download>📦 Download Launcher</a>
-    <audio src="https://AKARuberDuck.github.io/freetogame-deploy/assets/music/star-wars.mp3" autoplay loop></audio>
-    <select id="themeSelector"></select>
+    <h1>🕹️ FreeToGame</h1>
+    <button id="toggleTheme">☀️ Light Mode</button>
   </header>
+
   <main>
-    <div id="launcherContent">
-      <p>Welcome back, Commander.</p>
-      <p id="quote"></p>
-      <div id="statsPanel"></div>
-    </div>
+    <p>Welcome to your launcher. More features coming soon.</p>
+    <a href="assets/freetogame-deploy.zip" download>📦 Download Launcher</a>
   </main>
-  <footer>
-    <button id="toggleMusic">🔊 Music: ON</button>
-    <button id="openConsole">⌨ Dev Console</button>
-  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
