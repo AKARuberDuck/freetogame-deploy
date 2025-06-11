@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleTheme = document.getElementById("toggleTheme");
   const quote = document.getElementById("quote");
 
-  // Light/Dark toggle
   toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     toggleTheme.textContent = document.body.classList.contains("dark")
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
       : "☀️ Light Mode";
   });
 
-  // Splash quote
   const quotes = [
     "There is no try. Only do.",
     "Happiness can be found even in the darkest of times.",
@@ -20,14 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   quote.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
 
-  // Hide splash
   setTimeout(() => {
     const splash = document.getElementById("splashScreen");
     if (splash) splash.style.display = "none";
   }, 4500);
 
-  // Fetch games
-  fetch("https://www.freetogame.com/api/games")
+  // ✅ Secure proxy endpoint:
+  fetch("https://AKARuberDuck.onrender.com/api/games")
     .then(res => res.json())
     .then(games => {
       const list = document.getElementById("gameList");
